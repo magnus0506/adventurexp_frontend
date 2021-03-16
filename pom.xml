@@ -56,7 +56,7 @@
     </dependencies>
 
     <build>
-        <finalName>adventurexp-backend</finalName>
+        <finalName>adventurexp-frontend</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
