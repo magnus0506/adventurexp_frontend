@@ -2,16 +2,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Adventure Frontend</title>
+    <title>Activities</title>
 </head>
 <body>
+
+<table class="table table-bordered table-sm" id="tbl">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Activity</th>
+        <th>Description</th>
+        <th>Employee ID</th>
+
+    </tr>
+    </thead>
+    <tbody style="text-align: center">
+    </tbody>
+</table>
 <script>
     fetch("http://54.234.57.19:8085/activities")
         .then(response => response.json())
-        .then(data => {
-            const actMap = data.map(tbl => tbl.data)
-            console.log(actMap)})
+        .then(data =>  {
+            console.log(data)
+            updateTableHTML(data.map(x => Object.values(x)))
+        })
+
+
+    const tableBody = document.getElementById("tbl");
+
+    function updateTableHTML(array1) {
+
+        array1.forEach(function(row) {
+            const newRow = document.createElement("tr");
+            tableBody.appendChild(newRow);
+
+            if (row instanceof Array) {
+                row.forEach(function(cell) {
+                    const newCell = document.createElement("td");
+                    newCell.textContent = cell;
+                    newRow.appendChild(newCell);
+                });
+            } else {
+                newCell = document.createElement("td");
+                newCell.textContent = row;
+                newRow.appendChild(newCell);
+            }})}
 
 </script>
 </body>
 </html>
+
