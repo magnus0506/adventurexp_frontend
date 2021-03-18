@@ -5,6 +5,10 @@
     <title>Adventure Frontend</title>
 </head>
 <body>
-<h1>你好琳琳，你中文神</h1>
+<script>
+    fetch("http://54.234.57.19:8085/activities")
+        .then(response => response.json())
+        .then(data => console.log(data));
+</script>
 </body>
 </html>
