@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <title>Planned Activities</title>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
 
@@ -16,50 +17,89 @@
         <th>Participants</th>
         <th>Activity ID</th>
         <th>Activity name</th>
-        <th>Description</th>
+        <th>Activity Desc</th>
         <th>Employee ID</th>
-
 
     </tr>
     </thead>
     <tbody style="text-align: center">
     </tbody>
 </table>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
-    fetch("http://54.234.57.19:8085/activities/planned")
-        .then(response => response.json())
-        .then(data =>  {
-            data.map(actd => actd.data)
-            const update2 = updateTableHTML(data.map(x => Object.values(x)))
-            console.log(data)
-            updateTableHTML(update2(data.map(x => Object.values(x))))
-        })
+    $(document).ready(function () {
+        $.ajax({
+            url: "http://54.234.57.19:8085/activities/planned",
+            success: function (result) {
+                let tableRows = "";
+                $.each(result, function (key, val) {
+                    tableRows += "<tr>";
+                    tableRows +=
+                        "<td>" + val["plannedId"] + "</td><td>" + val["plannedDate"] +
+                        "</td><td>" + val["participantCount"] + "</td>" +
+                        "<td>" + val["activity"]["actId"] + "</td><td>" + val["activity"]["actName"] +
+                        "</td><td>" + val["activity"]["actDescription"] +
+                        "</td><td>" + val["activity"]["employeeId"] + "</td>";
 
-
-    const tableBody = document.getElementById("tbl");
-
-    function updateTableHTML(array1) {
-
-        array1.forEach(function(row) {
-            const newRow = document.createElement("tr");
-            tableBody.appendChild(newRow);
-
-            if (row instanceof Array) {
-                row.forEach(function(cell) {
-                    const newCell = document.createElement("td");
-                    newCell.textContent = cell;
-                    newRow.appendChild(newCell);
                 });
-            } else {
-                const newCell = document.createElement("td");
-                newCell.textContent = row;
-                newRow.appendChild(newCell);
-            }})}
-
+                tableRows += "</tr>";
+                $('#tbl tbody').html(tableRows)
+            }
+        });
+    })
 </script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<!--<script>-->
+<!--    fetch("http://54.234.57.19:8085/activities/planned")-->
+<!--        .then(response => response.json())-->
+<!--        .then(data =>  {-->
+<!--            const actMap = data.map(x => Object.values(x))-->
+<!--            const jsonObjs = data.map(x => Object.values(x).slice(3));-->
+<!--            const jb = jsonObjs.map(x => x.map(y => Object.values(y)))-->
+<!--            const ja = jb.map(x => x.map(y => Object.values(y).slice()))-->
+
+<!--            console.log(actMap)-->
+
+<!--            for(let i = 0; i < actMap.length; i++) {-->
+<!--                let a = actMap[i].pop();-->
+<!--                actMap[i].push((a.actId))-->
+<!--                actMap[i].push((a.actName))-->
+<!--                actMap[i].push((a.actDescription))-->
+<!--                actMap[i].push((a.employeeId))-->
+<!--            }-->
+<!--            updateTableHTML(actMap)-->
+
+<!--        })-->
+
+<!--    const tableBody = document.getElementById("tbl");-->
+
+
+<!--    function updateTableHTML(array1) {-->
+
+<!--        array1.forEach(function(row) {-->
+<!--            const newRow = document.createElement("tr");-->
+<!--            tableBody.appendChild(newRow);-->
+
+<!--            if (row instanceof Array) {-->
+<!--                row.forEach(function(cell) {-->
+<!--                    const newCell = document.createElement("td");-->
+<!--                    newCell.textContent = cell;-->
+<!--                    newRow.appendChild(newCell);-->
+<!--                });-->
+<!--            } else {-->
+<!--                const newCell = document.createElement("td");-->
+<!--                newCell.textContent = row;-->
+<!--                newRow.appendChild(newCell);-->
+<!--            }})}-->
+
+<!--</script>-->
+<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 
 </body>
 </html>
