@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-<div style="max-width: 1140px;margin:0 auto">
 <table class="table table-bordered table-sm" id="tbl">
     <thead>
     <tr>
@@ -15,7 +14,6 @@
         <th>Activity</th>
         <th>Description</th>
         <th>Employee ID</th>
-
     </tr>
     </thead>
     <tbody style="text-align: center">
@@ -23,36 +21,22 @@
 </table>
 
 
-</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
-    fetch("http://54.234.57.19:8085/activities")
-        .then(response => response.json())
-        .then(data =>  {
-            console.log(data)
-            updateTableHTML(data.map(x => Object.values(x)))
-        })
-
-
-    const tableBody = document.getElementById("tbl");
-
-    function updateTableHTML(array1) {
-
-        array1.forEach(function(row) {
-            const newRow = document.createElement("tr");
-            tableBody.appendChild(newRow);
-
-            if (row instanceof Array) {
-                row.forEach(function(cell) {
-                    const newCell = document.createElement("td");
-                    newCell.textContent = cell;
-                    newRow.appendChild(newCell);
+    $( document ).ready(function() {
+        $.ajax({
+            url: "http://54.234.57.19:8085/activities",
+            success: function( result ) {
+                console.log(result);
+                let tableContent = "";
+                $.each( result, function( key, value ) {
+                    tableContent += "<tr><td>" + value["actId"] + "</td><td>" + value["actName"] + "</td><td>" + value["actDescription"] + "</td><td>" + value["employeeId"] + "</td></tr>";
                 });
-            } else {
-                const newCell = document.createElement("td");
-                newCell.textContent = row;
-                newRow.appendChild(newCell);
-            }})}
+                $('tbody').html(tableContent)
 
+            }
+        });
+    });
 </script>
 </body>
 </html>
