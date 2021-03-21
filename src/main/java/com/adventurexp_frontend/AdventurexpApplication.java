@@ -1,4 +1,4 @@
-package com.adventurexp;
+package com.adventurexp_frontend;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

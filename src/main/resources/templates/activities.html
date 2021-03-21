@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Activities</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<button id="index" class="btn btn-info">Index</button>
+<button id="activities" class="btn btn-info">Activities</button>
+<button id="booking" class="btn btn-info">Bookings</button>
+<button id="new-booking" class="btn btn-info">Book activity</button>
+
+<table class="table table-bordered table-sm" id="tbl">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Activity</th>
+        <th>Description</th>
+        <th>Employee ID</th>
+    </tr>
+    </thead>
+    <tbody style="text-align: center">
+    </tbody>
+</table>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            url: "http://54.234.57.19:8085/activities",
+            success: function (result) {
+                console.log(result);
+                let tableContent = "";
+                $.each(result, function (key, value) {
+                    tableContent += "<tr><td>" + value["actId"] + "</td><td>" + value["actName"] + "</td><td>" + value["actDescription"] + "</td><td>" + value["employeeId"] + "</td></tr>";
+                });
+                $('#tbl tbody').html(tableContent)
+            }
+        });
+    });
+</script>
+<script>
+    function redirect(querySelector, url) {
+        document.querySelector(querySelector)
+            .addEventListener('click', () => {
+                window.location.href = url
+            })
+        console.log("query:" + querySelector, "url:" + url)
+    }
+
+    redirect("#index", "http://54.234.57.19:8090/")
+    redirect("#activities", "http://54.234.57.19:8090/activities")
+    redirect("#booking", "http://54.234.57.19:8090/booking")
+    redirect("#new-booking", "http://54.234.57.19:8090/booking/new")
+</script>
+</body>
+</html>
