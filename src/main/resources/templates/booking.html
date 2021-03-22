@@ -40,7 +40,7 @@
                     tableRows +=
                         "<td>" + val["bookingId"] + "</td><td>" + val["bookingDate"] +
                         "</td><td>" + val["participantCount"] + "</td>" +
-                        "<td>" + val["activity".indexOf(1)] + "</td><td>" + val["activity"]["actName"] +
+                        "<td>" + val["activity"]["actId"] + "</td><td>" + val["activity"]["actName"] +
                         "</td><td>" + val["activity"]["actDescription"] +
                         "</td><td>" + val["activity"]["employeeId"] + "</td>";
 
@@ -60,10 +60,15 @@
         console.log("query:" + querySelector, "url:" + url)
     }
 
-    redirect("#index", "http://54.234.57.19:8090/")
-    redirect("#activities", "http://54.234.57.19:8090/activities")
-    redirect("#booking", "http://54.234.57.19:8090/booking")
-    redirect("#new-booking", "http://54.234.57.19:8090/booking/new")
+    redirect("#index", "http://localhost:8090/")
+    redirect("#activities", "http://localhost:8090/activities")
+    redirect("#booking", "http://localhost:8090/booking")
+    redirect("#new-booking", "http://localhost:8090/booking/new")
+
+    // redirect("#index", "http://54.234.57.19:8090/")
+    // redirect("#activities", "http://54.234.57.19:8090/activities")
+    // redirect("#booking", "http://54.234.57.19:8090/booking")
+    // redirect("#new-booking", "http://54.234.57.19:8090/booking/new")
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
