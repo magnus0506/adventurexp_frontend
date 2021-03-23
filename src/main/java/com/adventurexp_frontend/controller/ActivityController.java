@@ -11,6 +11,11 @@ public class ActivityController {
         return "about";
     }
 
+    @GetMapping("/login")
+    public String loginController(){
+        return "login";
+    }
+
     @GetMapping("/activities")
     public String activitiesController(){
         return "activities";
