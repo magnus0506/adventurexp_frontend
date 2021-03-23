@@ -29,7 +29,6 @@
                 <table class="table table-striped table-hover table-lg" id="tbl">
                     <thead>
                     <tr>
-                        <th scope="col">ID</th>
                         <th>Activity</th>
                         <th>Description</th>
                         <th>Employee ID</th>
@@ -60,7 +59,7 @@
                 console.log(result);
                 let tableContent = "";
                 $.each(result, function (key, value) {
-                    tableContent += "<tr><td>" + value["actId"] + "</td><td>" + value["actName"] + "</td><td>" + value["actDescription"] + "</td><td>" + value["employeeId"] + "</td></tr>";
+                    tableContent += "<tr><td>" + value["actName"] + "</td><td>" + value["actDescription"] + "</td><td>" + value["employeeId"] + "</td></tr>";
                 });
                 $('#tbl tbody').html(tableContent)
             }
