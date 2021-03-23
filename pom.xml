@@ -11,7 +11,7 @@
     <groupId>com</groupId>
     <artifactId>adventurexp_frontend</artifactId>
     <version>1</version>
-    <name>adventurexp_frontend</name>
+    <name>com.adventurexp_frontend.adventurexp_frontend</name>
     <description>Demo project for Spring Boot</description>
     <properties>
         <java.version>11</java.version>

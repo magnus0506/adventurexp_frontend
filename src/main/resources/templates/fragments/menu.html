@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<nav th:fragment="menu" class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #ffccff;">
+    <a class="navbar-brand" href="/"><img src="images/dating_app_logo_600px.png" width="50px" height="auto"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
+            </li>
+            <!-- 					<li class="nav-item">
+                                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                                </li> -->
+            <!--
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Activities<span class="caret"></span></a>
+                <ul class="dropdown-menu" aria-labelledby="dropdown01">
+                    <li><a class="dropdown-item" href="/paintball">Paintball</a></li>
+                    <li><a class="dropdown-item" href="/archery">Archery</a></li>
+                </ul>
+            </li>
+            -->
+            <li class="nav-item">
+                <a class="nav-link" href="/activities">Activities</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/about">About Us</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/booking">Booking</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/booking/new">New Booking</a>
+            </li>
+            <!--
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contactForm">Admin</a>
+                        </li>
+            -->
+        </ul>
+
+    </div>
+</nav>
+
+<body>
