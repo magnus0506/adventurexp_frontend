@@ -6,6 +6,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class ActivityController {
 
+    @GetMapping("/about")
+    public String aboutController(){
+        return "about";
+    }
+
     @GetMapping("/activities")
     public String activitiesController(){
         return "activities";

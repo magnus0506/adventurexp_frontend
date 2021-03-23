@@ -8,6 +8,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
     <!-- Bootstrap for JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
@@ -23,37 +24,52 @@
 <div th:insert="fragments/menu :: menu"></div>
 <div th:insert="fragments/jumbotron :: jumbotron"></div>
 
-<h1>Welcome</h1>
+<div class="container" id="main">
 
-<!--
-    <button id="index" class="btn btn-info">Index</button>
-    <button id="activities" class="btn btn-info">Activities</button>
-    <button id="booking" class="btn btn-info">Bookings</button>
-    <button id="new-booking" class="btn btn-info">Book activity</button>
+    <!-- Indsæt indhold her -->
+    <div class="row">
 
-    <script>
-        function redirect(querySelector, url) {
-            document.querySelector(querySelector)
-                .addEventListener('click', () => {
-                    window.location.href = url
-                })
-            console.log("query:" + querySelector, "url:" + url)
-        }
+        <div class="col-md-6">
 
-        redirect("#index", "http://localhost:8090/")
-        redirect("#activities", "http://localhost:8090/activities")
-        redirect("#booking", "http://localhost:8090/booking")
-        redirect("#new-booking", "http://localhost:8090/booking/new")
+            <div class="simple-text"><h2>WELCOME!</h2>
+                <p class="parag1" title="">
+                    Catharsis (from Greek κάθαρσις, katharsis, meaning "purification"
+                    or "cleansing" or "clarification") is the purification and purgation
+                    of emotions—particularly pity and fear—through art or any extreme
+                    change in emotion that results in renewal and restoration. It is a
+                    metaphor originally used by Aristotle in the Poetics, comparing the
+                    effects of tragedy on the mind of a spectator to the effect of
+                    catharsis on the body. Our park will provide you with intense emotions
+                    and reconnection between your body and the real world. You’ll train
+                    and enhance your reflexes, your speed, your precision and focus.
+                    Beyond the therapeutic value of our activities, they are also a lot of
+                    fun! Our team of professionally trained instructors is looking forward
+                    to meeting you, and to initiate or perfect your skills.
+                    <br><br>
+                    Corporate team buildings can be organized by our experts, just drop
+                    us a line and we’ll make you a great offer!
+                    <br><br>
+                    Some activities are reserved for adults. Kids can be part in some
+                    selected activities too. All the family can enjoy our park!
+                    <br><br>
+                    Welcome & see you soon!
+                    <br><br>
+                    Our team
+                </p>
+            </div>
+        </div>
 
-        // redirect("#index", "http://54.234.57.19:8090/")
-        // redirect("#activities", "http://54.234.57.19:8090/activities")
-        // redirect("#booking", "http://54.234.57.19:8090/booking")
-        // redirect("#new-booking", "http://54.234.57.19:8090/booking/new")
-    </script>
+        <br><br>
 
-    -->
-
-    <div th:insert="fragments/footer :: footer"></div>
+        <div class="col-md-6">
+            <div class="simple-text"><h2>&ensp;</h2>
+                <p class="parag2"><img src="images/members_photos/Member_02.jpg" width="102%" height="auto" alt="Zentai costume image">
+                    <br><br></p>
+            </div>
+        </div>
+    </div>
+</div> <!-- /container -->
+<br>
 </body>
-
+    <div th:insert="fragments/footer :: footer"></div>
 </html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>About Us</title>
+
+</head>
+<body>
+
+<div th:insert="fragments/header :: header"></div>
+<div th:insert="fragments/menu :: menu"></div>
+<div th:insert="fragments/jumbotron :: jumbotron"></div>
+
+<div class="container" id="main">
+
+    <!-- Indsæt indhold her -->
+    <div class="row">
+
+        <div class="col-md-6">
+
+            <div class="simple-text"><h2>ABOUT US</h2>
+                <p class="parag1" title="">
+                    Founded in 1999 by passionate athletes, who won numerous
+                    awards and medals for their high-level performances, Magnus
+                    and Malene teamed up to start the Catharsis Park and share
+                    their passion and skills with their fans and all the people
+                    wanting to learn, while having fun at the same time. In 2009,
+                    the park grew and became so popular that another level of
+                    management needed to be implemented, and so Sophia came in the
+                    picture with her great managerial skills and became CEO of our
+                    park. When the park started offering high level archery
+                    activities, medalist Jean came to work with us. Our team of
+                    professionally trained instructors is looking forward to meeting
+                    you, and to initiate or perfect your skills.
+                    <br><br>
+                    Welcome & see you soon!
+                    <br><br>
+                    Our team
+                </p>
+            </div>
+        </div>
+
+        <br><br>
+
+        <div class="col-md-6">
+            <div class="simple-text"><h2>&ensp;</h2>
+                <p class="parag2"><img src="images/members_photos/Member_02.jpg" width="102%" height="auto" alt="Zentai costume image">
+                    <br><br></p>
+            </div>
+        </div>
+    </div>
+</div> <!-- /container -->
+<br>
+</body>
+    <div th:insert="fragments/footer :: footer"></div>
+</html>
