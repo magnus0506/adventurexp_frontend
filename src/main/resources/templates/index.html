@@ -24,11 +24,10 @@
 <div th:insert="fragments/jumbotron :: jumbotron"></div>
 
     <!-- Indsæt indhold her -->
+<div class="container" id="main">
     <div class="row">
-
         <div class="col-md-6">
-
-            <div class="simple-text"><h2>WELCOME!</h2>
+            <div class="simple-text"><h2><strong>WELCOME!</strong></h2>
                 <p class="parag1" title="">
                     Catharsis (from Greek κάθαρσις, katharsis, meaning "purification"
                     or "cleansing" or "clarification") is the purification and purgation
@@ -60,11 +59,14 @@
 
         <div class="col-md-6">
             <div class="simple-text"><h2>&ensp;</h2>
-                <p class="parag2"><img src="images/members_photos/Member_02.jpg" width="102%" height="auto" alt="Zentai costume image">
+                <p class="parag2"><img src="../images/adv_bg_image.jpg" width="100%" height="auto" alt="Paintball">
                     <br><br></p>
             </div>
         </div>
     </div>
+</div>
+
+<br><br>
 
     <div th:insert="fragments/footer :: footer"></div>
 </body>
