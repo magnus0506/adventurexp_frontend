@@ -35,14 +35,14 @@
             <div id="form-container">
                 <table class="table table-striped table-hover table-lg" id="tbl">
                     <thead>
-                        <tr style="color:white">
+                        <tr>
                             <th scope="col">Booking ID</th>
                             <th scope="col">Date</th>
                             <th scope="col">Participants</th>
-                            <th scope="col">Activity ID</th>
-                            <th scope="col">Name</th>
+<!--                            <th scope="col">Activity ID</th>-->
+                            <th scope="col">Activity name</th>
                             <th scope="col">Description</th>
-                            <th scope="col">Employee ID</th>
+                            <th scope="col">Instructor</th>
                         </tr>
                     </thead>
                     <tbody style="text-align: left; color:#ffffff">
@@ -57,17 +57,20 @@
 <script>
     $(document).ready(function () {
         $.ajax({
-            url: "http://54.234.57.19:8085/booking",
+            url: "http://localhost:8085/booking",
             success: function (result) {
+                console.log(result)
                 let tableRows = "";
                 $.each(result, function (key, val) {
                     tableRows += "<tr>";
                     tableRows +=
-                        "<td>" + val["bookingId"] + "</td><td>" + val["bookingDate"] +
-                        "</td><td>" + val["participantCount"] + "</td>" +
-                        "<td>"  + val["activity"]["actName"] +
+                        "<td>" + val["bookingId"] +
+                        "</td><td>" + val["bookingDate"] +
+                        "</td><td>" + val["participantCount"] +
+                        // "</td><td>" + val["activity"]["actId"] +
+                        "</td><td>" + val["activity"]["actName"] +
                         "</td><td>" + val["activity"]["actDescription"] +
-                        "</td><td>" + val["activity"]["employeeId"] + "</td>";
+                        "</td><td>" + val["activity"]["employee"] + "</td>";
 
                 });
                 tableRows += "</tr>";
