@@ -3,9 +3,9 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Activities</title>
+    <title>Home</title>
 
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
           integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
@@ -17,63 +17,60 @@
             integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
             crossorigin="anonymous"></script>
 
-    <title>Home</title>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
 
-<div th:insert="fragments/header :: header"></div>
-<div th:insert="fragments/menu :: menu"></div>
-<div th:insert="fragments/jumbotron :: jumbotron"></div>
+    <div th:insert="fragments/header :: header"></div>
+    <div th:insert="fragments/menu :: menu"></div>
+    <div th:insert="fragments/jumbotron :: jumbotron"></div>
 
-    <!-- Indsæt indhold her -->
-<div class="container" id="main">
-    <div class="row">
-        <div class="col-md-6">
-            <div class="simple-text"><h2><strong>WELCOME!</strong></h2>
-                <p class="parag1" title="">
-                    <strong>Catharsis</strong> (from Greek κάθαρσις, katharsis, meaning "purification"
-                    or "cleansing" or "clarification") is the purification and purgation
-                    of emotions—particularly pity and fear—through art or any extreme
-                    change in emotion that results in renewal and restoration. It is a
-                    metaphor originally used by Aristotle in the Poetics, comparing the
-                    effects of tragedy on the mind of a spectator to the effect of
-                    catharsis on the body. Our park will provide you with intense emotions
-                    and reconnection between your body and the real world. You’ll train
-                    and enhance your reflexes, your speed, your precision and focus.
-                    Beyond the therapeutic value of our activities, they are also a lot of
-                    fun! Our team of professionally trained instructors is looking forward
-                    to meeting you, and to initiate or perfect your skills.
-                    <br><br>
-                    Corporate team buildings can be organized by our experts, just drop
-                    us a line and we’ll make you a great offer!
-                    <br><br>
-                    Some activities are reserved for adults. Kids can be part in some
-                    selected activities too. All the family can enjoy our park!
-                    <br><br>
-                    Welcome & see you soon!
-                    <br><br>
-                    Our team
-                </p>
+        <!-- Indsæt indhold her -->
+    <div class="container" id="main">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="simple-text"><h2><strong>WELCOME!</strong></h2>
+                    <p class="parag1" title="">
+                        <strong>Catharsis</strong> (from Greek κάθαρσις, katharsis, meaning "purification"
+                        or "cleansing" or "clarification") is the purification and purgation
+                        of emotions—particularly pity and fear—through art or any extreme
+                        change in emotion that results in renewal and restoration. It is a
+                        metaphor originally used by Aristotle in the Poetics, comparing the
+                        effects of tragedy on the mind of a spectator to the effect of
+                        catharsis on the body. Our park will provide you with intense emotions
+                        and reconnection between your body and the real world. You’ll train
+                        and enhance your reflexes, your speed, your precision and focus.
+                        Beyond the therapeutic value of our activities, they are also a lot of
+                        fun! Our team of professionally trained instructors is looking forward
+                        to meeting you, and to initiate or perfect your skills.
+                        <br><br>
+                        Corporate team buildings can be organized by our experts, just drop
+                        us a line and we’ll make you a great offer!
+                        <br><br>
+                        Some activities are reserved for adults. Kids can be part in some
+                        selected activities too. All the family can enjoy our park!
+                        <br><br>
+                        Welcome & see you soon!
+                        <br><br>
+                        Our team
+                    </p>
+                </div>
+            </div>
+
+            <br><br>
+
+            <div class="col-md-6">
+                <div class="simple-text"><h2>&ensp;</h2>
+                    <p class="parag2"><img src="../images/adv_bg_image.jpg" width="100%" height="auto" alt="Paintball">
+                        <br><br></p>
+                </div>
             </div>
         </div>
-
-        <br><br>
-
-        <div class="col-md-6">
-            <div class="simple-text"><h2>&ensp;</h2>
-                <p class="parag2"><img src="../images/adv_bg_image.jpg" width="100%" height="auto" alt="Paintball">
-                    <br><br></p>
-            </div>
-        </div>
-    </div>
 </div>
 
-<br><br>
-
+    <br><br>
     <div th:insert="fragments/footer :: footer"></div>
 </body>
-
 </html>
