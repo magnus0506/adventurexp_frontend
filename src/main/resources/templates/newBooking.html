@@ -34,10 +34,10 @@
                         <tbody>
                         <tr>
                             <td class="align-baseline">
-                                <input type="date" required id="bookingDate" placeholder="Date..."><br>
-                                <input type="time" required id="bookingTime" placeholder="Time..."><br>
-                                <input type="text" required id="participants" placeholder="Participants..."><br>
-                                <select id="dropD" required placeholder="Activity..."></select><br>
+                                <input type="date" required id="bookingDate" placeholder="Date"><br>
+                                <input type="time" required id="bookingTime" placeholder="Time"><br>
+                                <input type="text" required id="participants" placeholder="How many persons?"><br>
+                                <select id="dropD" required placeholder="Choose activity"></select><br>
                                 <button id="add-booking" class="btn btn-info">Book</button>
                             </td>
                         </tr>
@@ -111,5 +111,7 @@
             });
         });
     </script>
+    <br><br>
+    <div th:insert="fragments/footer :: footer"></div>
 </body>
 </html>
