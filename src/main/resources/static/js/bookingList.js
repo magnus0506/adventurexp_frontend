@@ -24,7 +24,7 @@ $(function (){
 })
     deleteRow();
     async function deleteRow (){
-        const url ="http://localhost:8085/booking";
+        const url ="http://54.234.57.19:8085/booking";
         const response = await fetch(url);
         const bookings = await response.json();
         // console.log(bookings);
@@ -46,7 +46,7 @@ $(function (){
     }
 
     function deleteBooking(bookingId2){
-        const url = `http://localhost:8085/booking/${bookingId2}`
+        const url = `http://54.234.57.19:8085/booking/${bookingId2}`
         const deleteObject = {
             method:"DELETE"
         }
