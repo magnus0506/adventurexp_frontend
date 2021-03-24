@@ -49,10 +49,11 @@
                 'Accept': 'application/json',
                 'Content-type': 'application/json'
             },
-            // url: 'http://54.234.57.19:8085/newbooking',
-            url: 'http://localhost:8085/newbooking',
+            url: 'http://54.234.57.19:8085/newbooking',
+            // url: 'http://localhost:8085/newbooking',
             success: function (data) {
-                location.replace("http://localhost:8090/booking")
+                // location.replace("http://localhost:8090/booking")
+                location.replace("http://54.234.57.19:8090/booking")
                 console.log(data);
             },
             error: function (){

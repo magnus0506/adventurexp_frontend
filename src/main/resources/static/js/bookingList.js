@@ -11,7 +11,7 @@ $(function (){
     $.ajax({
         dataType: 'json',
         contentType: 'application/json',
-        url: "http://localhost:8085/booking/" + bookingId,
+        url: "http://54.234.57.19:8085/booking/" + bookingId,
         type: 'post',
         // data: "{Id : '" + bookingId + "'}",
     success: function (data){
@@ -26,8 +26,8 @@ $(function (){
 
     $(function () {
         $.ajax({
-            url: "http://localhost:8085/booking",
-            // url: "http://54.234.57.19:8085/booking",
+            // url: "http://localhost:8085/booking",
+            url: "http://54.234.57.19:8085/booking",
             success: function (result) {
                 console.log(result)
                 let tableRows = "";
