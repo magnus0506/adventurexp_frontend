@@ -48,9 +48,12 @@
                             <th scope="col">Activity name</th>
                             <th scope="col">Description</th>
                             <th scope="col">Instructor</th>
+                            <th scope="col"></th>
+
                         </tr>
                         </thead>
                         <tbody style="text-align: left; color:white">
+
                         </tbody>
                     </table>
                 </div>
@@ -61,33 +64,9 @@
     <div th:insert="fragments/footer :: footer"></div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $.ajax({
-                // url: "http://localhost:8085/booking",
-                url: "http://54.234.57.19:8085/booking",
-                success: function (result) {
-                    console.log(result)
-                    let tableRows = "";
-                    $.each(result, function (key, val) {
-                        tableRows += "<tr>";
-                        tableRows +=
-                            "<td>" + val["bookingId"] +
-                            "</td><td>" + val["bookingDate"] +
-                            "</td><td>" + val["bookingTime"] +
-                            "</td><td>" + val["participantCount"] +
-                            // "</td><td>" + val["activity"]["actId"] +
-                            "</td><td>" + val["activity"]["actName"] +
-                            "</td><td>" + val["activity"]["actDescription"] +
-                            "</td><td>" + val["activity"]["employee"] + "</td>";
+    <script src="../js/bookingList.js"></script>
 
-                    });
-                    tableRows += "</tr>";
-                    $('#tbl tbody').html(tableRows)
-                }
-            });
-        })
-    </script>
 </body>
 </html>
+
 
