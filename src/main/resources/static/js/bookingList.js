@@ -32,10 +32,29 @@ $(function (){
         console.log(container);
         bookings.forEach(booking => {
             const bookingId = booking.bookingId;
+            const bookingDate = booking.bookingDate;
+            const bookingTime = booking.bookingTime;
+            const participantCount = booking.participantCount;
+            const actName = booking.actId["actName"];
+
+
             const row = container.insertRow();
             const id = row.insertCell(0);
-            const button = row.insertCell(1);
+            const date = row.insertCell(1);
+            const time = row.insertCell(2);
+            const participants = row.insertCell(3);
+            const activityName = row.insertCell(4);
+            const description = row.insertCell(5);
+            const instructor = row.insertCell(6);
+            const button = row.insertCell(7);
+
             id.innerHTML = bookingId;
+            date.innerHTML = bookingDate;
+            time.innerHTML = bookingTime;
+            participants.innerHTML = participantCount
+            activityName.innerHTML = actName;
+            description.innerHTML = actDescription;
+            instructor.innerHTML = employeeId;
             button.innerHTML = "Delete";
             const deleteButton = document.createElement("button");
             deleteButton.onclick = function (){
