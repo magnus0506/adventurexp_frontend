@@ -87,6 +87,16 @@ label {
     background-color: white;
 }
 
+input, select, textarea{
+    width:220px;
+    border:5px solid #b3d9b1;
+
+    -ms-box-sizing:content-box;
+    -moz-box-sizing:content-box;
+    box-sizing:content-box;
+    -webkit-box-sizing:content-box;
+}
+
 .btn{
     color: #333333;
     background-color: #0a850b;
