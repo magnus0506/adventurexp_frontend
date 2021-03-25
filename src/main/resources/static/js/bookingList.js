@@ -53,8 +53,7 @@
 let id;
 $(document).on('click', ".deletebtn", function (e) {
     e.preventDefault();
-
-    const test = window.confirm("test?")
+    const test = window.confirm("Confirm deletion?")
 
     if (test) {
         $(this).closest('tr').remove()
@@ -82,15 +81,14 @@ $(document).on('click', ".editbtn", function (e) {
 
 $(function () {
     $.ajax({
-        // url: "http://localhost:8085/booking",
-        url: "http://54.234.57.19:8085/booking",
+        url: "http://localhost:8085/booking",
+        // url: "http://54.234.57.19:8085/booking",
         success: function (result) {
             console.log(result)
             let tableRows = "";
             $.each(result, function (key, val) {
                 tableRows += "<tr>";
                 tableRows +=
-
                     "<td>" + val["bookingId"] +
                     "</td><td>" + val["bookingDate"] +
                     "</td><td>" + val["bookingTime"] +
