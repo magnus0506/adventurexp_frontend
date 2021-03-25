@@ -53,7 +53,7 @@
             // url: 'http://localhost:8085/newbooking',
             success: function (data) {
                 // location.replace("http://localhost:8090/booking")
-                location.replace("http://54.234.57.19:8090/booking")
+                // location.replace("http://54.234.57.19:8090/booking")
                 console.log(data);
             },
             error: function (){
