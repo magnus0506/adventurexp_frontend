@@ -93,7 +93,7 @@ $(function () {
                     "</td><td>" + val["activity"]["actName"] +
                     "</td><td>" + val["activity"]["actDescription"] +
                     "</td><td>" + val["activity"]["employee"] +
-                    "</td><td><button type='button' class='deletebtn' data-id='" + val["bookingId"] + "'>Cancel</button></td>" +
+                    "</td><td><button type='button' class='deletebtn' data-id='" + val["bookingId"] + "'>Delete</button></td>" +
                     "</td><td><button type='button' class='editbtn' data-id='" + val["bookingId"] + "'>Edit</button></td>";
             });
             tableRows += "</tr>";
