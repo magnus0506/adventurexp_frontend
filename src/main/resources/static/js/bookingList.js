@@ -50,7 +50,7 @@
 //     location.reload();
 // }
 // })
-
+$
 
 $(document).on('click', ".deletebtn", function (e) {
     e.preventDefault();
@@ -68,6 +68,14 @@ $(document).on('click', ".deletebtn", function (e) {
         }
     })
 });
+
+$(document).on('click', ".editbtn", function (e) {
+    e.preventDefault();
+    const id = $(this).data('id');
+    console.log(id)
+    window.location.replace("http://localhost:8090/booking/edit/" + id);
+});
+
 $(function () {
     $.ajax({
         url: "http://localhost:8085/booking",
@@ -85,7 +93,8 @@ $(function () {
                     "</td><td>" + val["activity"]["actName"] +
                     "</td><td>" + val["activity"]["actDescription"] +
                     "</td><td>" + val["activity"]["employee"] +
-                    "</td><td><button type='button' class='deletebtn' data-id='" + val["bookingId"] + "'>Cancel</button></td>";
+                    "</td><td><button type='button' class='deletebtn' data-id='" + val["bookingId"] + "'>Cancel</button></td>" +
+                    "</td><td><button type='button' class='editbtn' data-id='" + val["bookingId"] + "'>Edit</button></td>";
             });
             tableRows += "</tr>";
             $('#tbl tbody').html(tableRows)

@@ -2,7 +2,6 @@ package com.adventurexp_frontend.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 
 @Controller
 public class ActivityController {
@@ -32,8 +31,8 @@ public class ActivityController {
         return "newBooking";
     }
 
-    @GetMapping ("/booking/edit")
+    @GetMapping ("/booking/edit/{id}")
     public String editBookingController(){
-        return "editBooking";
+        return "editbooking";
     }
 }

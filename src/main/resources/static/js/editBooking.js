@@ -3,10 +3,9 @@
 
 // <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    let bookingString;
+let bookingString;
 
-    // $ (dollar) --> genvej til jQuery: jQuery(document) <--> $(document)
-    $(document).ready(function () {
+$(document).ready(function () {
     $.ajax({
         // url: "http://localhost:8085/activities",
         url: "http://54.234.57.19:8085/activities",
@@ -23,7 +22,7 @@
 })
 
     $(function () {
-    $('#add-booking').on('click', function () {
+    $('#edit-booking').on('click', function () {
         let dataString = {
             bookingId: 0,
             bookingDate: $('#bookingDate').val(),
@@ -43,15 +42,15 @@
 
         console.log(dataString.activity.actId = bookingString);
         $.ajax({
-            type: 'POST',
+            type: 'PUT',
             dataType: 'json',
             data: JSON.stringify(dataString),
             headers: {
                 'Accept': 'application/json',
                 'Content-type': 'application/json'
             },
-            url: 'http://54.234.57.19:8085/newbooking',
-            // url: 'http://localhost:8085/newbooking',
+            // url: 'http://54.234.57.19:8085/booking',
+            url: 'http://localhost:8085/booking/{booking_id}',
             success: function (data) {
                 // location.replace("http://localhost:8090/booking")
                 // location.replace("http://54.234.57.19:8090/booking")
