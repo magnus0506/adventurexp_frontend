@@ -1,9 +1,7 @@
 
-
-
 // <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    let bookingString;
+let bookingString;
 
     // $ (dollar) --> genvej til jQuery: jQuery(document) <--> $(document)
     $(document).ready(function () {
