@@ -20,11 +20,12 @@ $(document).ready(function () {
         }
     });
 })
-
+let pathArr = window.location.pathname.split("/");
+console.log(pathArr)
     $(function () {
     $('#edit-booking').on('click', function () {
         let dataString = {
-            bookingId: 0,
+            bookingId: pathArr[2],
             bookingDate: $('#bookingDate').val(),
             bookingTime: $('#bookingTime').val(),
             participantCount: $('#participants').val(),
@@ -39,21 +40,22 @@ $(document).ready(function () {
         }
 
         bookingString = maxCheck(dataString.activity.actId)
-
+        console.log(dataString.bookingId)
         console.log(dataString.activity.actId = bookingString);
         $.ajax({
-            type: 'PUT',
+            type: 'PATCH',
             dataType: 'json',
             data: JSON.stringify(dataString),
             headers: {
                 'Accept': 'application/json',
                 'Content-type': 'application/json'
             },
-            // url: 'http://54.234.57.19:8085/booking',
-            url: 'http://localhost:8085/booking/{booking_id}',
+            url: 'http://54.234.57.19:8085/booking/' + pathArr[2],
+            // url: 'http://localhost:8085/booking/' + pathArr[2],
+
             success: function (data) {
                 // location.replace("http://localhost:8090/booking")
-                // location.replace("http://54.234.57.19:8090/booking")
+                location.replace("http://54.234.57.19:8090/booking")
                 console.log(data);
             },
             error: function (){

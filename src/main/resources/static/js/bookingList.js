@@ -50,42 +50,47 @@
 //     location.reload();
 // }
 // })
-$
-
+let id;
 $(document).on('click', ".deletebtn", function (e) {
     e.preventDefault();
-    $(this).closest('tr').remove()
-    const id = $(this).data('id');
-    console.log(id)
-    $.ajax({
-        url: "http://localhost:8085/booking/" + id,
-        type: 'delete',
-        success: function (data) {
-            console.log(data)
-        },
-        error: function (data) {
-            console.log("error: " + data)
-        }
-    })
+
+    const test = window.confirm("test?")
+
+    if (test) {
+        $(this).closest('tr').remove()
+        id = $(this).data('id');
+        console.log(id)
+        $.ajax({
+            url: "http://54.234.57.19:8085/booking/" + id,
+            type: 'delete',
+            success: function (data) {
+                console.log(data)
+            },
+            error: function (data) {
+                console.log("error: " + data)
+            }
+        })
+    }
 });
 
 $(document).on('click', ".editbtn", function (e) {
     e.preventDefault();
     const id = $(this).data('id');
     console.log(id)
-    window.location.replace("http://localhost:8090/booking/edit/" + id);
+    window.location.replace("http://54.234.57.19:8090/booking/" + id);
 });
 
 $(function () {
     $.ajax({
-        url: "http://localhost:8085/booking",
-        // url: "http://54.234.57.19:8085/booking",
+        // url: "http://localhost:8085/booking",
+        url: "http://54.234.57.19:8085/booking",
         success: function (result) {
             console.log(result)
             let tableRows = "";
             $.each(result, function (key, val) {
                 tableRows += "<tr>";
                 tableRows +=
+
                     "<td>" + val["bookingId"] +
                     "</td><td>" + val["bookingDate"] +
                     "</td><td>" + val["bookingTime"] +
@@ -93,8 +98,12 @@ $(function () {
                     "</td><td>" + val["activity"]["actName"] +
                     "</td><td>" + val["activity"]["actDescription"] +
                     "</td><td>" + val["activity"]["employee"] +
-                    "</td><td><button type='button' class='deletebtn' data-id='" + val["bookingId"] + "'>Cancel</button></td>" +
-                    "</td><td><button type='button' class='editbtn' data-id='" + val["bookingId"] + "'>Edit</button></td>";
+                    "</td><td>" +
+                    "<input type='image' src='/images/delete.png' style='width:20px' alt='Delete' id='img' " +
+                    "class='deletebtn' data-id='" + val["bookingId"] + "'>" +
+                    "</td><td>" +
+                    "<input  type='image' src='/images/edit.png' style='width:20px' alt='Edit' id='img' " +
+                    "class='editbtn' data-id='" + val["bookingId"] + "'></td>";
             });
             tableRows += "</tr>";
             $('#tbl tbody').html(tableRows)

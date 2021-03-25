@@ -29,43 +29,39 @@
 </head>
 <body>
 
-    <div th:insert="fragments/header :: header"></div>
-    <div th:insert="fragments/menu :: menu"></div>
-    <div th:insert="fragments/jumbotron :: jumbotron"></div>
-
-    <div class="container" id="main">
-        <div class="row">
-            <div class="col-md-12">
-                <div id="form-container">
-                    <table class="table table-striped table-hover table-lg" id="tbl">
-                        <thead>
-                        <tr>
-                            <th scope="col">Booking ID</th>
-                            <th scope="col">Date</th>
-                            <th scope="col">Time</th>
-                            <!-- <th scope="col">Activity ID</th>-->
-                            <th scope="col">Participants</th>
-                            <th scope="col">Activity name</th>
-                            <th scope="col">Description</th>
-                            <th scope="col">Instructor</th>
+<div th:insert="fragments/header :: header"></div>
+<div th:insert="fragments/menu :: menu"></div>
+<div th:insert="fragments/jumbotron :: jumbotron"></div>
+<a type="button" th:href="@{/booking/new/}">Book activity</a>
+<div class="container" id="main">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="form-container">
+                <table class="table table-striped table-hover table-lg" id="tbl">
+                    <thead>
+                    <tr>
+                        <th scope="col">Booking ID</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Time</th>
+                        <th scope="col">Participants</th>
+                        <th scope="col">Activity name</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Instructor</th>
                             <th scope="col"></th>
-                            <th scope="col"></th>
+                    </tr>
+                    </thead>
+                    <tbody style="text-align: left; color:white">
 
-                        </tr>
-                        </thead>
-                        <tbody style="text-align: left; color:white">
-
-                        </tbody>
-                    </table>
-                </div>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
-
-    <div th:insert="fragments/footer :: footer"></div>
+</div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="../js/bookingList.js"></script>
+
 
 </body>
 </html>
