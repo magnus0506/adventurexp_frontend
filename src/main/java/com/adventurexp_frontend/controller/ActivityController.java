@@ -32,7 +32,7 @@ public class ActivityController {
         return "newBooking";
     }
 
-    @PutMapping ("/booking/edit")
+    @GetMapping ("/booking/edit")
     public String editBookingController(){
         return "editBooking";
     }
