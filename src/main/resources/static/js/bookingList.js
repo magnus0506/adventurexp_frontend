@@ -81,8 +81,8 @@ $(document).on('click', ".editbtn", function (e) {
 
 $(function () {
     $.ajax({
-        url: "http://localhost:8085/booking",
-        // url: "http://54.234.57.19:8085/booking",
+        // url: "http://localhost:8085/booking",
+        url: "http://54.234.57.19:8085/booking",
         success: function (result) {
             console.log(result)
             let tableRows = "";
